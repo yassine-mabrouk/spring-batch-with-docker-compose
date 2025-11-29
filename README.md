@@ -13,7 +13,7 @@ It also supports automatic execution via scheduler and runs in Docker Compose.
 
 ```bash
 
-cd demo-spring-batch-app
+cd spring-batch-with-docker-compose
 docker-compose up -d --build
 docker-compose logs -f   # View real-time logs
 
@@ -31,6 +31,7 @@ docker ps
 ```bash
 
 docker-compose down
+docker rm -f customer-export-batch # Remove the old container if exist 
 docker-compose up -d --build
 
 ```
