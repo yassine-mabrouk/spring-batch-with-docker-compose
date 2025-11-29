@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  spring-batch-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: customer-export-batch
+    environment:
+      - TZ=Europe/Paris
+      - JAVA_OPTS=-Xmx512m -Xms256m
+      - BATCH_JOB_CRON=0 * * * * ?  # Run every minute
+    volumes:
+      - ./output:/app/output
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    networks:
+      - batch-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  batch-network:
+    driver: bridge

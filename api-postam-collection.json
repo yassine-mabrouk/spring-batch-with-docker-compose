@@ -1,0 +1,75 @@
+{
+  "info": {
+    "name": "Spring Batch Customer Export",
+    "_postman_id": "cfa1c4d2-33fe-4a9d-94c2-73e21dc1c07e",
+    "description": "API collection to trigger batch job, list Excel files, and download exports.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/batch/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","batch","health"]
+        }
+      }
+    },
+    {
+      "name": "Trigger Batch Job",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/api/batch/trigger",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","batch","trigger"]
+        }
+      }
+    },
+    {
+      "name": "List Excel Files",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/batch/files",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","batch","files"]
+        }
+      }
+    },
+    {
+      "name": "Download Today's File",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/batch/download/today",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","batch","download","today"]
+        }
+      }
+    },
+    {
+      "name": "Download Specific File",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/batch/download/customers_20251128.xlsx",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","batch","download","customers_20251128.xlsx"]
+        }
+      }
+    }
+  ]
+}
